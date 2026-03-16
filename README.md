@@ -52,5 +52,5 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 🚀 Stretch Features
 
-- [ ] Challenge 1: Tests
+- [x] Challenge 1: Tests
       
