@@ -25,9 +25,26 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] Describe the game's purpose.
+  - A number guessing game where the player picks a difficulty, then guesses a secret number within a limited number of attempts. The game gives higher/lower hints and tracks a score that goes up for winning early and down for wrong guesses.
+- [x] Detail which bugs you found.
+  - The secret number changed on every button click because it wasn't protected by a session state guard
+  - The hints were backwards — guessing too high said "Go HIGHER!" and vice versa
+  - The Hard difficulty range was easier than Normal (1–50 instead of 1–200)
+  - Attempts started at 1 instead of 0, wasting one attempt before the game began
+  - The win banner showed the wrong (stale) score because it read from session state before the update was written back
+  - With hints off, there was no confirmation that a guess was registered
+  - Invalid guesses (floats, empty input) were being accepted or added to history as blank entries
+  - New Game didn't reset status or history, and used a hardcoded range of 1–100 ignoring difficulty
+- [x] Explain what fixes you applied.
+  - Wrapped secret generation in `if "secret" not in st.session_state`
+  - Flipped the hint return values in `check_guess`
+  - Corrected Hard range to 1–200 in `get_range_for_difficulty`
+  - Changed attempts initialization from 1 to 0
+  - Stored `update_score` result in a local `new_score` variable and used that in the win banner
+  - Added a confirmation message when hints are hidden
+  - Added strict whole-number validation in `parse_guess`
+  - Fixed New Game to reset status, history, and use the difficulty-based range
 
 ## 📸 Demo
 
