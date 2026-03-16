@@ -3,7 +3,7 @@
 ## 🚨 The Situation
 
 You asked an AI to build a simple "Number Guessing Game" using Streamlit.
-It wrote the code, ran away, and now the game is unplayable. 
+It wrote the code, ran away, and now the game is unplayable.
 
 - You can't win.
 - The hints lie to you.
@@ -17,7 +17,7 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 🕵️‍♂️ Your Mission
 
 1. **Play the game.** Open the "Developer Debug Info" tab in the app to see the secret number. Try to win.
-2. **Find the State Bug.** Why does the secret number change every time you click "Submit"? Ask ChatGPT: *"How do I keep a variable from resetting in Streamlit when I click a button?"*
+2. **Find the State Bug.** Why does the secret number change every time you click "Submit"? Ask ChatGPT: _"How do I keep a variable from resetting in Streamlit when I click a button?"_
 3. **Fix the Logic.** The hints ("Higher/Lower") are wrong. Fix them.
 4. **Refactor & Test.** - Move the logic into `logic_utils.py`.
    - Run `pytest` in your terminal.
@@ -28,8 +28,8 @@ It wrote the code, ran away, and now the game is unplayable.
 - [x] Describe the game's purpose.
   - A number guessing game where the player picks a difficulty, then guesses a secret number within a limited number of attempts. The game gives higher/lower hints and tracks a score that goes up for winning early and down for wrong guesses.
 - [x] Detail which bugs you found.
-  - The secret number changed on every button click because it wasn't protected by a session state guard
-  - The hints were backwards — guessing too high said "Go HIGHER!" and vice versa
+  - The secret number changed on every button click
+  - The hints were backwards, guessing too high said "Go HIGHER!" and vice versa
   - The Hard difficulty range was easier than Normal (1–50 instead of 1–200)
   - Attempts started at 1 instead of 0, wasting one attempt before the game began
   - The win banner showed the wrong (stale) score because it read from session state before the update was written back
