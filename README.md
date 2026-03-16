@@ -48,9 +48,10 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📸 Demo
 
-- [x] 
+- [x] Screen when a user wins
+      ![alt text](<Screenshot 2026-03-15 at 8.40.44 PM.png>)
 
 ## 🚀 Stretch Features
 
 - [x] Challenge 1: Tests
-      
+      ![alt text](<Screenshot 2026-03-15 at 8.43.53 PM.png>)
